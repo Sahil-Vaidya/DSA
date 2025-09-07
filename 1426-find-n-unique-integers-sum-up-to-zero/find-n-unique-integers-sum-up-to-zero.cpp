@@ -2,15 +2,16 @@ class Solution {
 public:
     vector<int> sumZero(int n) {
         vector<int> ans(n);
-
         int start=1;
         int i=0;
-        while(i+1<n){
+        int j=n-1;
+        while(i<j){
             ans[i]=start;
-            ans[i+1]=-start;
+            ans[j]=-start;
 
-            i+=2;
             start++;
+            i++;
+            j--;
         }
         return ans;
     }
