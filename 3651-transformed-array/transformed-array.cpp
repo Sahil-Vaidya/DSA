@@ -4,8 +4,9 @@ public:
         int n=nums.size();
         vector<int> result(n);
         for (int i = 0; i < n; i++) {
-            int newIndex = ((i + nums[i]) % n + n) % n;
-            result[i] = nums[newIndex];
+            int shift = nums[i] % n;
+            int newidx = (i + shift + n) % n;
+            result[i] = nums[newidx];
         }
         return result;
     }
